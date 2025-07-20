@@ -1,0 +1,9 @@
+#!/bin/bash
+
+model_ckpt='./models_ckpt/ImagenFew/dyConv_Basic_24.ckpt'
+subset_p=0.1
+
+for dataset in "Mujoco" "ETTh2" "ETTm1" "ETTm2" "Sine" "Weather" "ILI" "SaugeenRiverFlow" "ECG200" "SelfRegulationSCP1" "StarLightCurves" "AirQuality" 
+do
+  python run.py --subset_p $subset_p --model_ckpt $model_ckpt --config configs/finetune/$dataset.yaml
+done

@@ -1,0 +1,115 @@
+model:
+  target: models.interpretable_diffusion.gaussian_diffusion.Diffusion_TS
+  params:
+    seq_length: 24
+    feature_size: 1
+    n_layer_enc: 4
+    n_layer_dec: 3
+    d_model: 96  # 4 X 24
+    timesteps: 1000
+    sampling_timesteps: 1000
+    loss_type: 'l1'
+    beta_schedule: 'cosine'
+    n_heads: 4
+    mlp_hidden_times: 4
+    attn_pd: 0.0
+    resid_pd: 0.0
+    kernel_size: 1
+    padding_size: 0
+solver:
+  base_lr: 1.0e-5
+  results_folder: ./Checkpoints_energy
+  gradient_accumulate_every: 2
+  save_cycle: 2500  # max_epochs // 10
+  ema:
+    decay: 0.995
+    update_interval: 10
+  scheduler:
+    target: engine.lr_sch.ReduceLROnPlateauWithWarmup
+    params:
+      factor: 0.5
+      patience: 5000
+      min_lr: 1.0e-5
+      threshold: 1.0e-1
+      threshold_mode: rel
+      warmup_lr: 8.0e-4
+      warmup: 500
+      verbose: False
+
+batch_size: 256
+ema_warmup: 100
+handler: models.interpretable_diffusion.handler
+datasets_dir: ./data/
+epochs: 1000
+seq_len: 24
+logging_iter: 100
+
+datasets:
+  - name: stock
+    data: stock
+  - name: energy
+    data: energy
+  - name: ETTh1
+    data: ETTh1
+    embed: timeF
+    rel_path: long_range/ETT-small/ETTh1.csv
+    features: M
+    label_len: 7
+    pred_len: 0
+  - name: Exchange
+    data: custom
+    embed: timeF
+    rel_path: long_range/exchange_rate/exchange_rate.csv
+    features: M
+    label_len: 8
+    pred_len: 0
+  - name: MSL
+    data: MSL
+    rel_path: MSL
+  - name: PSM
+    data: PSM
+    rel_path: PSM
+  - name: SMAP
+    data: SMAP
+    rel_path: SMAP
+  - name: SMD
+    data: SMD
+    rel_path: SMD
+  - name: SelfRegulationSCP2
+    data: UEA
+    rel_path: UEA/SelfRegulationSCP2
+  - name: UWaveGestureLibrary
+    data: UEA
+    rel_path: UEA/UWaveGestureLibrary
+  - name: ECG5000
+    data: UEA
+    rel_path: UEA/ECG5000
+  - name: NonInvasiveFetalECGThorax1
+    data: UEA
+    rel_path: UEA/NonInvasiveFetalECGThorax1
+  - name: Blink
+    data: UEA
+    rel_path: UEA/Blink
+  - name: ElectricDevices
+    data: UEA
+    rel_path: UEA/ElectricDevices
+  - name: Trace
+    data: UEA
+    rel_path: UEA/Trace
+  - name: FordB
+    data: UEA
+    rel_path: UEA/FordB
+  - name: EMOPain
+    data: UEA
+    rel_path: UEA/EMOPain
+  - name: Chinatown
+    data: UEA
+    rel_path: UEA/Chinatown
+  - name: SharePriceIncrease
+    data: UEA
+    rel_path: UEA/SharePriceIncrease
+  - name: ECG200
+    data: UEA
+    rel_path: UEA/ECG200
+train_on_datasets:
+  - ECG200

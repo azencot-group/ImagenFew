@@ -1,0 +1,21 @@
+--extra-index-url https://download.pytorch.org/whl/cu118
+
+torch==2.3.1+cu118
+torchvision==0.18.1+cu118
+torchaudio==2.3.1+cu118
+omegaconf==2.3.0
+seaborn==0.13.2
+einops==0.8.0
+extensions==0.4
+matplotlib==3.9.1
+neptune==1.10.4
+tqdm==4.66.4
+pillow==10.4.0
+scipy==1.14.0
+numpy==1.23.5
+scikit-learn==1.2.2
+tensorflow==2.12.0
+gluonts==0.16.0
+loralib==0.1.2
+sktime==0.35.0
+argparse
