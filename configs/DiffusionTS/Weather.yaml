@@ -117,7 +117,7 @@ datasets:
   - name: Weather
     data: custom
     embed: timeF
-    rel_path: long_range/weather/weather.csv
+    rel_path: TSF/weather/weather.csv
     features: M
     label_len: 21
     pred_len: 0

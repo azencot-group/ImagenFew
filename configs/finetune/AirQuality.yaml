@@ -89,5 +89,6 @@ datasets:
     rel_path: UEA/SharePriceIncrease
   - name: AirQuality
     data: AirQuality
+    path: TSG/AirQuality/AirQualityUCI.csv
 train_on_datasets:
   - AirQuality

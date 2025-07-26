@@ -110,7 +110,7 @@ datasets:
     rel_path: UEA/SharePriceIncrease
   - data: mujoco
     name: mujoco
-    path: ./short_range/mujoco0.0
+    path: ./TSG/mujoco0.0
 #    path: ./data/short_range/mujoco0.0
 train_on_datasets:
   - mujoco

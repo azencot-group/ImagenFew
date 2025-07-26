@@ -111,7 +111,7 @@ datasets:
   - name: ILI
     data: custom
     embed: timeF
-    rel_path: long_range/illness/national_illness.csv
+    rel_path: TSF/illness/national_illness.csv
     features: M
     label_len: 7
     pred_len: 0

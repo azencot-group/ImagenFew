@@ -111,7 +111,7 @@ datasets:
   - name: ETTm1
     data: ETTm1
     embed: timeF
-    rel_path: long_range/ETT-small/ETTm1.csv
+    rel_path: TSF/ETT-small/ETTm1.csv
     features: M
     label_len: 7
     pred_len: 0

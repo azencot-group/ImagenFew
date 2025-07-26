@@ -116,5 +116,6 @@ datasets:
     pred_len: 0
   - name: AirQuality
     data: AirQuality
+    path: TSG/AirQuality/AirQualityUCI.csv
 train_on_datasets:
   - AirQuality
