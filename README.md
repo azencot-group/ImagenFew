@@ -1,3 +1,5 @@
+# News
+(September 2025) We are happy to announce that the paper has been accepted to **NeurIPS2025**!
 
 # 🧪 ImagenFew: Unified Time Series Generation Under Data Scarcity
 
