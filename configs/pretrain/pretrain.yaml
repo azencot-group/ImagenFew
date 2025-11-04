@@ -9,7 +9,6 @@ delay: 8
 embedding: 8
 # model:
 handler: models.ImagenFew.handler
-input_channels: 55
 img_resolution: 8
 unet_channels: 32
 ch_mult: [1,2,2,4]
