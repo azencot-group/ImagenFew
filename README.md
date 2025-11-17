@@ -136,10 +136,12 @@ Want to use your own generative architecture? Just follow these steps:
 If you use this work, please cite:
 
 ```
-@article{gonen2025time,
-  title={Time Series Generation Under Data Scarcity: A Unified Generative Modeling Approach},
-  author={Gonen, Tal and Pemper, Itai and Naiman, Ilan and Berman, Nimrod and Azencot, Omri},
-  journal={arXiv preprint arXiv:2505.20446},
-  year={2025}
+@inproceedings{
+gonen2025time,
+title={Time Series Generation Under Data Scarcity: A Unified Generative Modeling Approach},
+author={Tal Gonen and Itai Pemper and Ilan Naiman and Nimrod Berman and Omri Azencot},
+booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+year={2025},
+url={https://openreview.net/forum?id=p324ryBKTc}
 }
 ```
